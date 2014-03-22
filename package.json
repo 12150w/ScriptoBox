@@ -1,9 +1,11 @@
 {
-	"name": "Scriptobox",
-	"version": "0.0.1",
-	"author": "12150w <12150w@gmail.com>",
-	"description": "The best documentation experience you have ever had",
-	"dependencies": {
-		"mongoose": "3.8.x"
-	}
+  "name": "Scriptobox",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.5.0",
+    "mongoose": "3.8.x"
+  }
 }
