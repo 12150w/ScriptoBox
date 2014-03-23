@@ -1,0 +1,39 @@
+<div class="ink-grid">
+	
+	<div class="column-group">
+		<div class="large-70">
+			<h2>Pick an active pad</h2>
+			<p class="note">Or create a new one</p>
+		</div>
+		<div class="large-30">
+			<button class="ink-button green push-right hide-large">
+				<i class="fa fa-plus"></i> New Pad
+			</button>
+		</div>
+	</div>
+	
+	<div class="column-group">
+		<div class="hide-medium hide-small large-30 box">
+			<h3>Pad Menu</h3>
+			<button class="ink-button green">
+				<i class="fa fa-plus"></i> New Pad
+			</button>
+		</div>
+		<div class="hide-small hide-medium large-5"></div>
+		<div class="small-100 medium-100 large-65 box">
+			<table class="ink-table hover">
+				<thead>
+					<tr><td><strong>Active Pads</strong></td></tr>
+				</thead>
+				<tbody>
+					{{#each}}
+						<tr>
+							<td>{{title}}</td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+</div>

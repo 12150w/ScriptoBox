@@ -1,9 +1,27 @@
 .scb-nav {
-	border-bottom: 2px solid black;
 	background-color: #222222;
 	
 	h1 {
 		color: white;
 	}
 	
+	li {
+		cursor: pointer;
+	}
+	
+	nav {
+		margin-left: 15px;
+	}
+	
+}
+
+.box {
+	border-radius: 4px;
+	-webkit-box-shadow: 0 2px 3px 0 #dddddd;
+	-moz-box-shadow: 0 2px 3px 0 #dddddd;
+	box-shadow: 0 2px 3px 0 #dddddd;
+	border: 1px solid #BBB;
+	background-color: #FFF;
+	padding: 1em;
+	margin-top: 1em;
 }

@@ -1,6 +1,18 @@
 <div class="scb-nav">
 	<div class="ink-grid">
-		<h1>ScriptoBox</h1>
+		<div class="hide-small hide-medium large-15"></div>
+		
+		<nav class="ink-navigation">
+			<ul class="menu horizontal">
+				{{#link-to 'index' tagName='li'}}
+					<h1>ScriptoBox</h1>
+				{{/link-to}}
+				{{#link-to 'pads' tagName='li'}}
+					{{#link-to 'pads'}}Pads{{/link-to}}
+				{{/link-to}}
+			</ul>
+		</nav>
+	
 	</div>
 </div>
 

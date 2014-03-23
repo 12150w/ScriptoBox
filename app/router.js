@@ -6,6 +6,9 @@ Router.map(function() {
   // this.resource('posts', function() {
   //   this.route('new');
   // });
+  this.resource('pads', function() {
+  	this.route('index');
+  });
 });
 
 export default Router;
