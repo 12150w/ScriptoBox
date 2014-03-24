@@ -10,7 +10,7 @@ var Pad = mongoose.model('Pad', new Schema({
 	active: Boolean
 }) );
 
-app.use('/api', function(req, res, next) {
+app.use('/api/data', function(req, res, next) {
 	
 	// Get params
 	var rawVars = req.path.split('/');
@@ -18,6 +18,9 @@ app.use('/api', function(req, res, next) {
 	for(var i=0; i<rawVars.length; i++) {
 		if(!!rawVars[i]) vars.push(rawVars[i]);
 	}
+	
+	// Add cross domain header
+	res.set('Access-Control-Allow-Origin', '*');
 	
 	res.send({vars: vars, type: req.method});
 	
