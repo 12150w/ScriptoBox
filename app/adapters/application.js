@@ -1,33 +1,26 @@
 export default DS.Adapter.extend({
 	
-	find: function(store, type, id) {
-		console.log(type + ' ' + id);
-	},
-	
-	findQuery: function(store, type, query) {
-		console.log(type);
-		console.log(query);
-	},
+	baseURL: '/api',
 	
 	findAll: function(store, type, sinceToken) {
+		console.log(type);
 		return new Ember.RSVP.Promise(function(resolve, reject) {
-			
-			// Query via data API
 			jQuery.ajax({
-				url: 'http://localhost:3000/api/data', // NOTE: make this changeable easily
 				type: 'POST',
-				contentType: 'application/json'
-				data: JSON.serialize({collection: type.typeKey}),
+				contentType: 'application/json',
+				url: 'http://localhost:3000/api/data/' + type.typeKey,
+				data: JSON.stringify({
+					action: 'query',
+					filter: {}
+				}),
 				success: function(data) {
-					console.log(data);
-					Ember.run(null, resolve);
+					for(var i=0; i<(data.res || []).length; i++) data.res[i].id = data.res[i]['_id'];
+					Ember.run(null, resolve, data.res || []);
 				},
-				error: function(xhr, status, error) {
-					xhr.then = null;
+				error: function(xhr) {
 					Ember.run(null, reject, xhr);
 				}
 			});
-			
 		});
 	}
 	
