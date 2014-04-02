@@ -5,7 +5,8 @@ Router.map(function() {
   this.route('helper-test');
   this.resource('pads', function() {
   	this.route('index'),
-  	this.route('new')
+  	this.route('new'),
+  	this.route('view', {path: 'view/:pad_id'})
   });
 });
 

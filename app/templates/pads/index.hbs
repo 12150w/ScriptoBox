@@ -26,10 +26,8 @@
 					<tr><td><strong>Active Pads</strong></td></tr>
 				</thead>
 				<tbody>
-					{{#each}}
-						<tr>
-							<td>{{title}}</td>
-						</tr>
+					{{#each pad in model}}
+						{{#link-to 'pads.view' pad tagName="tr"}}<td>{{pad.title}}</td>{{/link-to}}
 					{{/each}}
 				</tbody>
 			</table>
