@@ -1,0 +1,26 @@
+<div class="ink-grid">
+
+	<div class="space"></div>
+
+	<div class="column-group">
+		<div class="hide-small hide-medium large-15"></div>
+		<div class="small-100 medium-100 large-70 box">
+			
+			<h3>{{model.title}}</h3>
+			
+			<form class="ink-form">
+				<div class="control-group">
+					<div class="control">
+						{{input type="text" value=model.title placeholder="Enter Title"}}
+					</div>
+				</div>
+			</form>
+			
+			<div>
+				<button class="ink-button green push-center" {{action 'getStarted'}}><i class="fa fa-check"></i> Get Started</button>
+			</div>
+			
+		</div>
+	</div>
+	
+</div>
