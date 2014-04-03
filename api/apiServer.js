@@ -5,6 +5,8 @@ var Schema = mongoose.Schema;
 var app = express();
 var db = mongoose.connect('mongodb://localhost/scriptobox');
 
+var sio = require('socket.io');
+
 var modelMap = {};
 modelMap['pad'] = mongoose.model('Pad', new Schema({
 	title: String,
@@ -41,6 +43,16 @@ app.use('/api/data', function(req, res, next) {
 var server = app.listen(3000, function() {
 	console.log('ScriptoBox Server started');
 });
+
+var io = sio.listen(server);
+var ioPads = io.of('/pad');
+ioPads.on('connection', function(socket) {
+	
+	socket.on('update', function(data) {
+		ioPads.emit('updateOut', data);
+	});
+	
+})
 
 function apiQuery(table, filter, callback) {
 	
